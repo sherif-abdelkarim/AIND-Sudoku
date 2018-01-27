@@ -3,11 +3,12 @@
 
 # Question 1 (Naked Twins)
 Q: How do we use constraint propagation to solve the naked twins problem?  
-A: *Student should provide answer here*
+A: We loop over each unit from the unitlist and check if there are two boxes which have the exact same values and each have only 2 digits in it and add them in a list of twins. for example, A1: '24' and B1:'24' would be counted as twins and added to the list of twins, but A4: '123' and B5: '123' would not be counted as twins since they have 3 digits each so they are not twins (they would be considered triplets if there were a third box in the same unit with the same digits).
+Then we loop over the twins list and find the peers common between the pair of each twins, for example, A1: '24' and B1:'24' are twins so we find the peers common between them (in other words we find the units in which both of them exist) and remove the digits of the twins from all the boxes in those peers in this case the digits are '2' and '4'. This ensures that no digits from the twins is allowed in the possible digits for other boxes in the same unit, and Thus enforcing the constraint.
 
 # Question 2 (Diagonal Sudoku)
 Q: How do we use constraint propagation to solve the diagonal sudoku problem?  
-A: *Student should provide answer here*
+A: Simply we add the diagonals as units to the unitlist. Thus it is added automatically to the list of peers for the boxes along the diagonal. Meaning unlike standard suduko where each box has peers from the same row, column, and 3x3 square only, now boxes existing on the diagonal will also have peers from the diagonal. So later in the eliminate function when it is checking the peers it will prevent dulicates from foriming on the diagonals. Thus enforcing the constraints that no duplicates should exist on the diagonals.
 
 ### Install
 

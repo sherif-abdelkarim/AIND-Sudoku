@@ -1,5 +1,4 @@
-import sys, os, random, pygame
-sys.path.append(os.path.join("objects"))
+import sys, os, random, pygame sys.path.append(os.path.join("objects"))
 import SudokuSquare
 from GameResources import *
 
